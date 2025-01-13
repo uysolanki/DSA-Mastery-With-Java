@@ -6,6 +6,7 @@ public class SelectionSort {
 
 	public static void main(String[] args) {
 		int arr[]= {6,7,2,5,3};
+		System.out.println("***Selection Sort***");
 		System.out.println("Before : "+Arrays.toString(arr));
 		selectionSort(arr);
 		System.out.println("After : "+Arrays.toString(arr));
