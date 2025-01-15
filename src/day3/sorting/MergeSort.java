@@ -21,7 +21,7 @@ public class MergeSort {
 		merge(arr,first,mid,last);	
 		}
 	}	
-								//    0          3        7
+								         //    0          3        7
 	private static void merge(int[] arr, int first, int mid, int last) {
 		
 		int brr[]=new int[last+1];
@@ -34,15 +34,15 @@ public class MergeSort {
 		{
 			if(arr[i]<=arr[j])
 			{
-				brr[k]=arr[i];
-				i++;
-				k++;
+				brr[k++]=arr[i++];
+//				i++;
+//				k++;
 			}
 			else
 			{
-				brr[k]=arr[j];
-				j++;
-				k++;
+				brr[k++]=arr[j++];
+//				j++;
+//				k++;
 			}
 		}
 		
@@ -50,9 +50,9 @@ public class MergeSort {
 		{
 			while(j<=last)
 			{
-				brr[k]=arr[j];
-				j++;
-				k++;
+				brr[k++]=arr[j++];
+//				j++;
+//				k++;
 			}
 		}
 		
@@ -60,9 +60,9 @@ public class MergeSort {
 		{
 			while(i<=mid)
 			{
-				brr[k]=arr[i];
-				i++;
-				k++;
+				brr[k++]=arr[i++];
+//				i++;
+//				k++;
 			}
 		}
 		
