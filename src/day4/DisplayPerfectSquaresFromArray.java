@@ -13,7 +13,6 @@ public class DisplayPerfectSquaresFromArray {
 			if(sq*sq==n)							//16            4           16          16
 				System.out.println(n);              //21            4           16          -
 		}
-
 	}
 
 }
