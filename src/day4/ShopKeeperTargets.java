@@ -19,7 +19,7 @@ public class ShopKeeperTargets {
 				sum = sum + arr[j];
 				if (sum >= target) 
 				{
-					System.out.println("Target Achived on Index " + j);
+					System.out.println("Target Achived on Day " + (j+1));
 					flag=1;
 					break;
 				}
@@ -27,7 +27,5 @@ public class ShopKeeperTargets {
 			if(flag==0)
 				System.out.println("Sorry Target Not Achieved");
 		}
-
 	}
-
 }
