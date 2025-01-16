@@ -16,7 +16,5 @@ public class LinearSearch2 {
 		}
 		if(i==arr.length)
 			System.out.println("NOT Found");
-
 	}
-
 }
