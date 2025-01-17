@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class ShopKeeperTargets {
 
 	public static void main(String[] args) {
+		          //day1    2    3    4    5   6    7
+		          //  100  600  1000 1700 1900 2400 3000
 		int arr[] = { 100, 500, 400, 700, 200, 500, 600 };
 		int numberOfTargets = 3;
 		Scanner sc = new Scanner(System.in);
