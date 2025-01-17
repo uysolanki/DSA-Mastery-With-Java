@@ -11,13 +11,13 @@ public class InsertionSort {
 		insertionSort(arr);
 		System.out.println("After : "+Arrays.toString(arr));
 	}
-	private static void insertionSort(int[] arr) {
+	public static void insertionSort(int[] arr) {
 		int temp,j;
 		for(int k=1;k<arr.length;k++)
 		{
 			temp=arr[k];
 			j=k-1;
-			while(j>=0  && temp>=arr[j])
+			while(j>=0  && temp<=arr[j])
 			{
 				arr[j+1]=arr[j];
 				j--;

@@ -7,18 +7,14 @@ public class BinarySearchDemo4 {
 		int search=77;
 		int index=binarySearch(arr,search);
 		System.out.println(index==-1?"Not Found":"Found at Index "+index);
-		
-
 	}
 
-	private static int binarySearch(int[] arr, int search) {
-		int loopCounter=0;
+	public static int binarySearch(int[] arr, int search) {
 		int first=0;
 		int last=arr.length-1;
 		int mid=0;
 		while(first<=last)
 		{
-			loopCounter++;
 			mid=(first+last)/2;
 			
 			if(search==arr[mid])

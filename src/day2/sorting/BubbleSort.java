@@ -11,7 +11,7 @@ public class BubbleSort {
 		bubbleSort(arr);
 		System.out.println("After : "+Arrays.toString(arr));
 	}
-	private static void bubbleSort(int[] brr) {
+	public static void bubbleSort(int[] brr) {
 		int temp;
 		for(int i=1;i<brr.length;i++) //01234
 		{

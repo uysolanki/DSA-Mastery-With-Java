@@ -12,7 +12,7 @@ public class MergeSort {
 
 	}
                                              //   0          7
-	private static void mergeSort(int[] arr, int first, int last) {
+	public static void mergeSort(int[] arr, int first, int last) {
 		if(first<last)
 		{
 		int mid=(first+last)/2;             // mid =3
