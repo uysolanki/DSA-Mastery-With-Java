@@ -5,27 +5,20 @@ import java.util.Stack;
 public class PalindromeUsingStack {
 
 	public static void main(String[] args) {
-		String str="madama";
+		String str="malayalam";		
+		System.out.println(palindrome(str)?"Palindrome String" : "Not Palindrome String");
+	}
+
+	private static boolean palindrome(String str) {
 		Stack<Character> stack=new Stack();
-		
 		for(char ch:str.toCharArray())
 			stack.push(ch);
 		
-		int flag=0;
 		for(char ch:str.toCharArray())
 		{
-			char z=stack.pop();
-			if(ch!=z)
-			{
-				flag=1;
-				break;
-			}
+			if(ch!=stack.pop())
+			  return false;	
 		}
-		
-		if(flag==1)
-			System.out.println("Not Palindrome");
-		else
-			System.out.println("Palindrome");
+		return true;
 	}
-
 }
