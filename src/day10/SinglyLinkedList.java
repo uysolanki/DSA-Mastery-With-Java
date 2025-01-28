@@ -20,9 +20,9 @@ public class SinglyLinkedList {
 		display(head);
 		
 		System.out.println("Enter the position of new node");
-		int position=sc.nextInt();
-		addMid(head,position);
-		System.out.println("Display After Adding At " + position +" Position");
+		int aposition=sc.nextInt();
+		addMid(head,aposition);
+		System.out.println("Display After Adding At " + aposition +" Position");
 		display(head);
 		
 		head=deleteFirst(head);
@@ -32,7 +32,25 @@ public class SinglyLinkedList {
 		deleteLast(head);
 		System.out.println("Display After Deleting At Last Position");
 		display(head);
+		
+		System.out.println("Enter the position of new node");
+		int dposition=sc.nextInt();
+		deleteMid(head,dposition);
+		System.out.println("Display After Deleting from " + dposition +" Position");
+		display(head);
 
+	}
+
+	private static void deleteMid(Node head, int dposition) {
+		Node temp=head;
+		int i=1;
+		while(i<dposition-1)
+		{
+		temp=temp.next;
+		i++;
+		}
+		
+		temp.next=temp.next.next;
 	}
 
 	private static void deleteLast(Node head) {
