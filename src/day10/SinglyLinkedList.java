@@ -5,40 +5,164 @@ import java.util.Scanner;
 public class SinglyLinkedList {
 
 	public static void main(String[] args) {
-		Node head=null;
-		Scanner sc=new Scanner(System.in);
-		head=create(head);
-		System.out.println("Display After Creation");
-		display(head);
+//		Node head=null;
+//		Scanner sc=new Scanner(System.in);
+//		head=create(head);
+//		System.out.println("Display After Creation");
+//		display(head);
+	
 		
-		head=addFirst(head);
-		System.out.println("Display After Adding At First Position");
-		display(head);
+		Node head1=null;
+		Node head2=null;
+		Node head3=null;
+		head1=create(head1);
+		head2=create(head2);
 		
-		addLast(head);
-		System.out.println("Display After Adding At Last Position");
-		display(head);
+		head3=merge(head1,head2);
+		ascendingSort(head3);
+		System.out.println("Display After MergeList");
+		display(head3);
+		head3=union(head3);
+		System.out.println("Display After Union");
+		display(head3);
 		
-		System.out.println("Enter the position of new node");
-		int aposition=sc.nextInt();
-		addMid(head,aposition);
-		System.out.println("Display After Adding At " + aposition +" Position");
-		display(head);
 		
-		head=deleteFirst(head);
-		System.out.println("Display After Deleting At First Position");
-		display(head);
+//		head=reverseList(head);
+//		System.out.println("Display After Reverse");
+//		display(head);
 		
-		deleteLast(head);
-		System.out.println("Display After Deleting At Last Position");
-		display(head);
+//		ascendingSort(head);
+//		System.out.println("Display After Ascending Sorting");
+//		display(head);
+//		descendingSort(head);
+//		System.out.println("Display After Descending Sorting");
+//		display(head);
 		
-		System.out.println("Enter the position of new node");
-		int dposition=sc.nextInt();
-		deleteMid(head,dposition);
-		System.out.println("Display After Deleting from " + dposition +" Position");
-		display(head);
+		
+//		head=addFirst(head);
+//		System.out.println("Display After Adding At First Position");
+//		display(head);
+//		
+//		addLast(head);
+//		System.out.println("Display After Adding At Last Position");
+//		display(head);
+//		
+//		System.out.println("Enter the position of new node");
+//		int aposition=sc.nextInt();
+//		addMid(head,aposition);
+//		System.out.println("Display After Adding At " + aposition +" Position");
+//		display(head);
+//		
+//		head=deleteFirst(head);
+//		System.out.println("Display After Deleting At First Position");
+//		display(head);
+//		
+//		deleteLast(head);
+//		System.out.println("Display After Deleting At Last Position");
+//		display(head);
+//		
+//		System.out.println("Enter the position of new node");
+//		int dposition=sc.nextInt();
+//		deleteMid(head,dposition);
+//		System.out.println("Display After Deleting from " + dposition +" Position");
+//		display(head);
+//		
+//		System.out.println("Enter the Number to Search");
+//		int search=sc.nextInt();
+//		int position=searchList(head,search);
+//		System.out.println(position==-1?"Not Found ":"Found");
+		
+		
+	}
 
+	private static Node union(Node head3) {
+		Node temp=head3;
+		while(temp.next!=null)
+		{
+			if(temp.data==temp.next.data)
+			{
+				temp.next=temp.next.next;
+			}
+			
+			temp=temp.next;
+		}
+		return head3;
+	}
+
+	private static Node merge(Node head1, Node head2) {
+		Node temp=head1;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=head2;
+		return head1;
+	}
+
+	private static Node reverseList(Node head) {
+		Node left=null;
+		Node current=head;
+		Node right=null;
+		
+		while(current!=null)
+		{
+			right=current.next;
+			current.next=left;
+			left=current;
+			current=right;
+		}
+		return left;
+	}
+
+	private static void ascendingSort(Node head) {
+		Node i;
+		Node j;
+		int temp;
+		for(i=head;i!=null;i=i.next) //01234
+		{
+		    for(j=i.next;j!=null;j=j.next) //1234,234,34,4
+		      {
+		    		if(i.data>j.data)
+		    		{
+		    			temp=i.data;
+		    			i.data=j.data;
+		    			j.data=temp;
+		    		}
+		      }
+		}
+		
+	}
+	
+	private static void descendingSort(Node head) {
+		Node i;
+		Node j;
+		int temp;
+		for(i=head;i!=null;i=i.next) //01234
+		{
+		    for(j=i.next;j!=null;j=j.next) //1234,234,34,4
+		      {
+		    		if(i.data<j.data)
+		    		{
+		    			temp=i.data;
+		    			i.data=j.data;
+		    			j.data=temp;
+		    		}
+		      }
+		}
+		
+	}
+
+	private static int searchList(Node head, int search) {
+		Node temp=head;
+		while(temp!=null)
+		{
+			if(temp.data==search)
+			{
+				return 1;
+			}
+			temp=temp.next;
+		}
+		return -1;
 	}
 
 	private static void deleteMid(Node head, int dposition) {
@@ -52,7 +176,7 @@ public class SinglyLinkedList {
 		
 		temp.next=temp.next.next;
 	}
-
+	
 	private static void deleteLast(Node head) {
 		Node temp=head;
 		while(temp.next.next!=null)
@@ -86,7 +210,6 @@ public class SinglyLinkedList {
 		
 		Node nn=getNode();
 		temp.next=nn;
-		
 	}
 
 	private static Node addFirst(Node head) {
